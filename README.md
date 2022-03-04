@@ -1,13 +1,23 @@
-# Paper Development Sample Plugin
+# MBTI Survival
+## MBTI 기반 각자 버프를 받음
 
-## Environment
+## MBTI
+### E
+신속 버프
+### I
+보호 버프
 
-- [Paper 1.18.1](https://papermc.io/downloads) dependencies
-- [Tap](https://github.com/monun/tap) dependencies
-- [Kommand](https://github.com/monun/kommand/) dependencies
-- [Server Script](https://github.com/monun/server-script) / Using [aroxu's GoLang version](https://github.com/aroxu/server-script/)
+### S
+미정
+### N
+미정
 
-### This Project Requires:
+### T
+인챈트 버프
+### F
+주민 버프
 
-- [JDK 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) (Corretto JDK is Recommended.)
-- libarchive-tools package (on Linux|Shell, for [./server-script.sh](./server-script.sh))
+### J
+규칙적인 챌린지
+### P
+즉흥적인 랜덤 챌린지
