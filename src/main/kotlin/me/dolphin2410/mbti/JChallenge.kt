@@ -43,7 +43,7 @@ class JChallenge(override val player: Player, var finish: (String) -> Unit, var 
             finish(name)
         }
 
-        if (kill >= MAX_KILL && mine >= MAX_MINE && animals >= MAX_ANIMALS && harvest >= MAX_HARVEST) {
+        if (kill >= MAX_KILL && mine >= MAX_MINE && animals >= MAX_ANIMALS && harvest >= MAX_HARVEST && isValid) {
             isValid = false
             then()
         }

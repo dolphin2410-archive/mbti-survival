@@ -19,8 +19,11 @@ import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.event.inventory.TradeSelectEvent
 import org.bukkit.event.player.PlayerInteractAtEntityEvent
 import org.bukkit.event.player.PlayerMoveEvent
+import org.bukkit.event.player.PlayerRespawnEvent
 import org.bukkit.inventory.MerchantInventory
 import org.bukkit.inventory.meta.ItemMeta
+import org.bukkit.potion.PotionEffect
+import org.bukkit.potion.PotionEffectType
 import java.util.Random
 
 class MBTIEvents: Listener {
@@ -141,6 +144,18 @@ class MBTIEvents: Listener {
             if (challenge is PChallenge) {
                 challenge.walk(e.to.clone().subtract(e.from.clone()).length())
             }
+        }
+    }
+
+    @EventHandler
+    fun onDeath(e: PlayerRespawnEvent) {
+        MBTIPlugin.mbtiList[e.player.uniqueId]?.let { type ->
+            if (type.isI()) {
+                e.player.addPotionEffect(PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Int.MAX_VALUE, 1, false, false))
+            } else {
+                e.player.addPotionEffect(PotionEffect(PotionEffectType.SPEED, Int.MAX_VALUE, 1, false, false))
+            }
+
         }
     }
 
