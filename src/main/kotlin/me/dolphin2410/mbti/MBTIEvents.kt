@@ -139,7 +139,7 @@ class MBTIEvents: Listener {
     fun onMove(e: PlayerMoveEvent) {
         MBTIPlugin.challenges[e.player.uniqueId]?.let { challenge ->
             if (challenge is PChallenge) {
-                challenge.walk(e.to.subtract(e.from).length())
+                challenge.walk(e.to.clone().subtract(e.from.clone()).length())
             }
         }
     }
