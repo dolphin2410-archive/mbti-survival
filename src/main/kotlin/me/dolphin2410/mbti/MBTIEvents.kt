@@ -161,7 +161,7 @@ class MBTIEvents: Listener {
 
     @EventHandler
     fun villagerUpgrade(e: InventoryClickEvent) {
-        if (((e.inventory as MerchantInventory).merchant as Villager).villagerLevel != 1) {
+        if (e.inventory is MerchantInventory && ((e.inventory as MerchantInventory).merchant as Villager).villagerLevel != 1) {
             MBTIPlugin.mbtiList[e.whoClicked.uniqueId]?.let { mbti ->
                 if (!mbti.isN()) {
                     e.whoClicked.sendMessage(text("You upgraded the villager! "))
